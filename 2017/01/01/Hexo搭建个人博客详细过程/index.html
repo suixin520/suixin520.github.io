@@ -1,0 +1,788 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hexo," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/head-image-32*32.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Hexo搭建个人博客详细过程1. 环境配置：
+下载安装git;
+
+
+下载安装Node.js; //最好安装稳定版的Node
+
+
+申请github账户; //如果已有，请飘过此句
+
+2. hexo安装：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo搭建个人博客详细过程">
+<meta property="og:url" content="http://yoursite.com/2017/01/01/Hexo搭建个人博客详细过程/index.html">
+<meta property="og:site_name" content="suixin">
+<meta property="og:description" content="Hexo搭建个人博客详细过程1. 环境配置：
+下载安装git;
+
+
+下载安装Node.js; //最好安装稳定版的Node
+
+
+申请github账户; //如果已有，请飘过此句
+
+2. hexo安装：">
+<meta property="og:updated_time" content="2017-01-02T07:44:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo搭建个人博客详细过程">
+<meta name="twitter:description" content="Hexo搭建个人博客详细过程1. 环境配置：
+下载安装git;
+
+
+下载安装Node.js; //最好安装稳定版的Node
+
+
+申请github账户; //如果已有，请飘过此句
+
+2. hexo安装：">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/01/Hexo搭建个人博客详细过程/"/>
+
+
+
+
+
+  <title> Hexo搭建个人博客详细过程 | suixin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">suixin</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">More And More Study Skill</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-search">
+          <a href="/search" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-search"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-friend">
+          <a href="/friend" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user-secret"></i> <br />
+            
+            友情链接
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/01/Hexo搭建个人博客详细过程/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Suixin">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/head-image.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="suixin">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="suixin" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Hexo搭建个人博客详细过程
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-01T08:13:17+08:00">
+                2017-01-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Hexo搭建个人博客详细过程"><a href="#Hexo搭建个人博客详细过程" class="headerlink" title="Hexo搭建个人博客详细过程"></a>Hexo搭建个人博客详细过程</h2><h3 id="1-环境配置："><a href="#1-环境配置：" class="headerlink" title="1. 环境配置："></a>1. 环境配置：</h3><ol>
+<li>下载安装<a href="https://git-scm.com/download/" target="_blank" rel="external">git</a>;</li>
+</ol>
+<ol>
+<li>下载安装<a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a>; //最好安装稳定版的Node</li>
+</ol>
+<ol>
+<li>申请<a href="https://github.com/" target="_blank" rel="external">github</a>账户; //如果已有，请飘过此句</li>
+</ol>
+<h3 id="2-hexo安装："><a href="#2-hexo安装：" class="headerlink" title="2. hexo安装："></a>2. hexo安装：</h3><a id="more"></a>
+<ul>
+<li><p>新建一个文件夹用来保存本地博客文件,在该文件夹下执行：</p>
+<pre><code>npm install -g hexo-cli //npm包全局安装hexo，这个过程需要等待一段时间...
+</code></pre></li>
+<li><p>等上面执行完成后再执行：</p>
+<pre><code>hexo init &lt;folder&gt; //如果自己在外面新建好了文件夹，&lt;folder&gt;可以不要，下载hexo包
+
+cd &lt;folder&gt;//如果上面没有folder这句可以不要
+
+npm install//等待（漫长的）一段时间...
+</code></pre></li>
+<li><p>安装完成后可以执行下面命令：</p>
+<pre><code>hexo server
+</code></pre><p>  然后可以在浏览器中打开localhost:4000，就能看到你的本地静态blog网页了。</p>
+</li>
+</ul>
+<h3 id="3-配置github，把代码托管到github上"><a href="#3-配置github，把代码托管到github上" class="headerlink" title="3. 配置github，把代码托管到github上"></a>3. 配置github，把代码托管到github上</h3><ul>
+<li>首先登陆你的<a href="https://github.com/" target="_blank" rel="external">github</a>，然后新建一个仓库，名字最好是这样的格式：yourname.github.io (yourname指的是你github的name)。</li>
+</ul>
+<ul>
+<li><p>然后更改本地的_config.yml文件，用记事本（任意编辑器都可）打开，翻到最下面的deploy改为：</p>
+<pre><code>deploy:
+      type: git
+      repository: https://github.com/yourname/yourname.github.io.git
+      branch: master
+</code></pre></li>
+</ul>
+<ul>
+<li><p>然后在刚刚的下载好hexo文件夹中右键，git bush,在黑窗口中输入：</p>
+<pre><code>hexo generate
+
+//hexo g完成后再输入：
+
+hexo deploy
+</code></pre><p>  如果提示<strong>not found git错误</strong>：</p>
+</li>
+</ul>
+<pre><code>1. 首先检查本地的_config.yml文件格式是否正确，每个冒号后面有个空格，type是git而不是github，地址要输入正确
+2. 这些都正确如果还报错输入下面一行代码：
+
+        npm install hexo-deployer-git --save
+
+    然后再generate和deploy
+</code></pre><ul>
+<li><p>这些过程成功完成后就可以在你的仓库中看到你上传上的代码了，然后就可以访问<a href="#">yourname.github.io</a>看到你的个人博客页面了。这个看起来和你在本地localhost:4000看的页面是一样的，但是你可以在任何一台有网络的电脑上看到你的页面。</p>
+<pre><code>小提示：当你代码上传到github上之后，你立即访问的话可能会出现404错误，这个是正常的，大概等一段时间之后，快则一两分钟，慢则
+
+半个小时以上（看人品）。所以不用担心这个问题，只要代码上传到你的仓库了。
+</code></pre></li>
+</ul>
+<h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><ul>
+<li><p>Hexo<a href="https://hexo.io/docs/" target="_blank" rel="external">官方文档</a></p>
+</li>
+<li><p><a href="http://www.jianshu.com/p/465830080ea9" target="_blank" rel="external">HEXO+Github,搭建属于自己的博客</a></p>
+</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+        </div>
+      
+
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head-image.png"
+               alt="Suixin" />
+          <p class="site-author-name" itemprop="name">Suixin</p>
+          <p class="site-description motion-element" itemprop="description">reading</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="Link" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="Link" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="Link" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.sryria.com" title="sry" target="_blank">sry</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xuanfengge.com" title="轩枫阁" target="_blank">轩枫阁</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo搭建个人博客详细过程"><span class="nav-number">1.</span> <span class="nav-text">Hexo搭建个人博客详细过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-环境配置："><span class="nav-number">1.1.</span> <span class="nav-text">1. 环境配置：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-hexo安装："><span class="nav-number">1.2.</span> <span class="nav-text">2. hexo安装：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-配置github，把代码托管到github上"><span class="nav-number">1.3.</span> <span class="nav-text">3. 配置github，把代码托管到github上</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考："><span class="nav-number">2.</span> <span class="nav-text">参考：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Suixin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 提供
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a> &&
+  更新By - 
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    Suixin
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
