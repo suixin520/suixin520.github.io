@@ -84,19 +84,16 @@
 
 
 
-<meta name="description" content="JavaScript的作用域与闭包&amp;ensp;&amp;ensp;相信大家如果是从其他标准语言（Java、C++…）开始接触JavaScript时候都会对其变量和函数的使用很不适宜。JavaScript的变量与函数机制与其他编程语言不同，理解清楚其作用机制有助于我们理解更高级的特性。在JavaScript中，所有声明的变量和函数都是一个特殊的全局对象(obj)的属性值。
-&amp;ensp;&amp;ensp;这里先说一">
+<meta name="description" content="JavaScript的作用域与闭包&amp;ensp;&amp;ensp;相信大家如果是从其他标准语言（Java、C++…）开始接触JavaScript时候都会对其变量和函数的使用很不适宜。JavaScript的变量与函数机制与其他编程语言不同，理解清楚其作用机制有助于我们理解更高级的特性。在JavaScript中，所有声明的变量和函数都是一个特殊的全局对象(obj)的属性值。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript的作用域与闭包">
 <meta property="og:url" content="http://yoursite.com/2017/01/12/JavaScript的作用域与闭包/index.html">
 <meta property="og:site_name" content="suixin">
-<meta property="og:description" content="JavaScript的作用域与闭包&amp;ensp;&amp;ensp;相信大家如果是从其他标准语言（Java、C++…）开始接触JavaScript时候都会对其变量和函数的使用很不适宜。JavaScript的变量与函数机制与其他编程语言不同，理解清楚其作用机制有助于我们理解更高级的特性。在JavaScript中，所有声明的变量和函数都是一个特殊的全局对象(obj)的属性值。
-&amp;ensp;&amp;ensp;这里先说一">
-<meta property="og:updated_time" content="2017-01-13T13:28:34.000Z">
+<meta property="og:description" content="JavaScript的作用域与闭包&amp;ensp;&amp;ensp;相信大家如果是从其他标准语言（Java、C++…）开始接触JavaScript时候都会对其变量和函数的使用很不适宜。JavaScript的变量与函数机制与其他编程语言不同，理解清楚其作用机制有助于我们理解更高级的特性。在JavaScript中，所有声明的变量和函数都是一个特殊的全局对象(obj)的属性值。">
+<meta property="og:updated_time" content="2017-01-13T13:35:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript的作用域与闭包">
-<meta name="twitter:description" content="JavaScript的作用域与闭包&amp;ensp;&amp;ensp;相信大家如果是从其他标准语言（Java、C++…）开始接触JavaScript时候都会对其变量和函数的使用很不适宜。JavaScript的变量与函数机制与其他编程语言不同，理解清楚其作用机制有助于我们理解更高级的特性。在JavaScript中，所有声明的变量和函数都是一个特殊的全局对象(obj)的属性值。
-&amp;ensp;&amp;ensp;这里先说一">
+<meta name="twitter:description" content="JavaScript的作用域与闭包&amp;ensp;&amp;ensp;相信大家如果是从其他标准语言（Java、C++…）开始接触JavaScript时候都会对其变量和函数的使用很不适宜。JavaScript的变量与函数机制与其他编程语言不同，理解清楚其作用机制有助于我们理解更高级的特性。在JavaScript中，所有声明的变量和函数都是一个特殊的全局对象(obj)的属性值。">
 
 
 
@@ -348,7 +345,7 @@
       
 
       
-        <h1 id="JavaScript的作用域与闭包"><a href="#JavaScript的作用域与闭包" class="headerlink" title="JavaScript的作用域与闭包"></a>JavaScript的作用域与闭包</h1><p>&ensp;&ensp;相信大家如果是从其他标准语言（Java、C++…）开始接触JavaScript时候都会对其变量和函数的使用很不适宜。JavaScript的变量与函数机制与其他编程语言不同，理解清楚其作用机制有助于我们理解更高级的特性。在JavaScript中，所有声明的变量和函数都是一个特殊的全局对象(obj)的属性值。</p>
+        <h1 id="JavaScript的作用域与闭包"><a href="#JavaScript的作用域与闭包" class="headerlink" title="JavaScript的作用域与闭包"></a>JavaScript的作用域与闭包</h1><p>&ensp;&ensp;相信大家如果是从其他标准语言（Java、C++…）开始接触JavaScript时候都会对其变量和函数的使用很不适宜。JavaScript的变量与函数机制与其他编程语言不同，理解清楚其作用机制有助于我们理解更高级的特性。在JavaScript中，所有声明的变量和函数都是一个特殊的全局对象(obj)的属性值。<br><a id="more"></a></p>
 <p>&ensp;&ensp;这里先说一下JavaScript在浏览器中的运行原理，在执行js脚本时候，浏览器会有一个预处理的过程，即变量的初始化，这里解析器会扫描全部代码，寻找其中的函数声明语句，并创建相应的object并放进window中作为属性值，然后解析器会扫描所有用var声明变量的语句，然后给window创建相应的属性名，如果没有用var声明则是不会创建到window中。这时候属性值会初始化为undefined，还没有执行赋值语句。最后再依次执行赋值语句。如下例：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a);<span class="comment">//undefined</span></div><div class="line"><span class="built_in">console</span>.log(b);<span class="comment">//function</span></div><div class="line"><span class="built_in">console</span>.log(c);<span class="comment">//undefined</span></div><div class="line"><span class="built_in">console</span>.log(d);<span class="comment">//报错</span></div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> c = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line">d = <span class="number">2</span>；</div><div class="line"><span class="built_in">console</span>.log(a);<span class="comment">//1</span></div><div class="line"><span class="built_in">console</span>.log(b);<span class="comment">//function</span></div><div class="line"><span class="built_in">console</span>.log(c);<span class="comment">//function</span></div><div class="line"><span class="built_in">console</span>.log(d);<span class="comment">//2</span></div></pre></td></tr></table></figure>
 <p>&ensp;&ensp;还有一方面是函数中的变量运行原理。在function被加入window之后，当方法每次执行时会创建一个新的对象(newObj)，并把传入方法的参数，本函数中声明的变量都加入该对象的属性。这个对象会被方法内部用来读写变量值，但不是全局的。如下例：</p>
