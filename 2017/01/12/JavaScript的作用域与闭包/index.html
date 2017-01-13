@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -84,15 +84,19 @@
 
 
 
-<meta name="description" content="reading">
-<meta property="og:type" content="website">
-<meta property="og:title" content="suixin">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="JavaScript的作用域与闭包&amp;ensp;&amp;ensp;相信大家如果是从其他标准语言（Java、C++…）开始接触JavaScript时候都会对其变量和函数的使用很不适宜。JavaScript的变量与函数机制与其他编程语言不同，理解清楚其作用机制有助于我们理解更高级的特性。在JavaScript中，所有声明的变量和函数都是一个特殊的全局对象(obj)的属性值。
+&amp;ensp;&amp;ensp;这里先说一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript的作用域与闭包">
+<meta property="og:url" content="http://yoursite.com/2017/01/12/JavaScript的作用域与闭包/index.html">
 <meta property="og:site_name" content="suixin">
-<meta property="og:description" content="reading">
+<meta property="og:description" content="JavaScript的作用域与闭包&amp;ensp;&amp;ensp;相信大家如果是从其他标准语言（Java、C++…）开始接触JavaScript时候都会对其变量和函数的使用很不适宜。JavaScript的变量与函数机制与其他编程语言不同，理解清楚其作用机制有助于我们理解更高级的特性。在JavaScript中，所有声明的变量和函数都是一个特殊的全局对象(obj)的属性值。
+&amp;ensp;&amp;ensp;这里先说一">
+<meta property="og:updated_time" content="2017-01-13T13:28:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="suixin">
-<meta name="twitter:description" content="reading">
+<meta name="twitter:title" content="JavaScript的作用域与闭包">
+<meta name="twitter:description" content="JavaScript的作用域与闭包&amp;ensp;&amp;ensp;相信大家如果是从其他标准语言（Java、C++…）开始接触JavaScript时候都会对其变量和函数的使用很不适宜。JavaScript的变量与函数机制与其他编程语言不同，理解清楚其作用机制有助于我们理解更高级的特性。在JavaScript中，所有声明的变量和函数都是一个特殊的全局对象(obj)的属性值。
+&amp;ensp;&amp;ensp;这里先说一">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/01/12/JavaScript的作用域与闭包/"/>
 
 
 
 
 
-  <title> suixin </title>
+  <title> JavaScript的作用域与闭包 | suixin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -147,9 +151,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -260,9 +262,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -295,10 +297,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/01/12/JavaScript的作用域与闭包/" itemprop="url">
-                  JavaScript的作用域与闭包
-                </a>
+                JavaScript的作用域与闭包
               
             
           </h1>
@@ -349,9 +348,7 @@
       
 
       
-        
-          
-            <h1 id="JavaScript的作用域与闭包"><a href="#JavaScript的作用域与闭包" class="headerlink" title="JavaScript的作用域与闭包"></a>JavaScript的作用域与闭包</h1><p>&ensp;&ensp;相信大家如果是从其他标准语言（Java、C++…）开始接触JavaScript时候都会对其变量和函数的使用很不适宜。JavaScript的变量与函数机制与其他编程语言不同，理解清楚其作用机制有助于我们理解更高级的特性。在JavaScript中，所有声明的变量和函数都是一个特殊的全局对象(obj)的属性值。</p>
+        <h1 id="JavaScript的作用域与闭包"><a href="#JavaScript的作用域与闭包" class="headerlink" title="JavaScript的作用域与闭包"></a>JavaScript的作用域与闭包</h1><p>&ensp;&ensp;相信大家如果是从其他标准语言（Java、C++…）开始接触JavaScript时候都会对其变量和函数的使用很不适宜。JavaScript的变量与函数机制与其他编程语言不同，理解清楚其作用机制有助于我们理解更高级的特性。在JavaScript中，所有声明的变量和函数都是一个特殊的全局对象(obj)的属性值。</p>
 <p>&ensp;&ensp;这里先说一下JavaScript在浏览器中的运行原理，在执行js脚本时候，浏览器会有一个预处理的过程，即变量的初始化，这里解析器会扫描全部代码，寻找其中的函数声明语句，并创建相应的object并放进window中作为属性值，然后解析器会扫描所有用var声明变量的语句，然后给window创建相应的属性名，如果没有用var声明则是不会创建到window中。这时候属性值会初始化为undefined，还没有执行赋值语句。最后再依次执行赋值语句。如下例：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(a);<span class="comment">//undefined</span></div><div class="line"><span class="built_in">console</span>.log(b);<span class="comment">//function</span></div><div class="line"><span class="built_in">console</span>.log(c);<span class="comment">//undefined</span></div><div class="line"><span class="built_in">console</span>.log(d);<span class="comment">//报错</span></div><div class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;&#125;</div><div class="line"><span class="keyword">var</span> c = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</div><div class="line">d = <span class="number">2</span>；</div><div class="line"><span class="built_in">console</span>.log(a);<span class="comment">//1</span></div><div class="line"><span class="built_in">console</span>.log(b);<span class="comment">//function</span></div><div class="line"><span class="built_in">console</span>.log(c);<span class="comment">//function</span></div><div class="line"><span class="built_in">console</span>.log(d);<span class="comment">//2</span></div></pre></td></tr></table></figure>
 <p>&ensp;&ensp;还有一方面是函数中的变量运行原理。在function被加入window之后，当方法每次执行时会创建一个新的对象(newObj)，并把传入方法的参数，本函数中声明的变量都加入该对象的属性。这个对象会被方法内部用来读写变量值，但不是全局的。如下例：</p>
@@ -387,297 +384,62 @@
 <p>&ensp;&ensp;上述代码中，foo1执行完成后，foo1函数中的局部变量n一直在内存中保存着，add函数和foo2函数一直可以访问到n变量，所以当foo1执行完毕返回后，n一直存在内存，所以第一次执行完成后得到的是1，第二次执行完成后是2，这样就形成了闭包。</p>
 <p><strong>以下是经典的闭包例子：</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">eg1:</div><div class="line"><span class="keyword">var</span> name = <span class="string">'Window'</span>;</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="attr">name</span>: <span class="string">'obj'</span>,</div><div class="line">	<span class="attr">getName</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">		&#125;;</div><div class="line">	)</div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(obj.getName()());</div><div class="line"></div><div class="line">eg2:</div><div class="line"><span class="keyword">var</span> name = <span class="string">'Window'</span>;</div><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">	<span class="attr">name</span>: <span class="string">'obj'</span>,</div><div class="line">	<span class="attr">getName</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="keyword">var</span> that = <span class="keyword">this</span>;</div><div class="line">		<span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">			<span class="keyword">return</span> that.name;</div><div class="line">		&#125;;</div><div class="line">	)</div><div class="line">&#125;;</div><div class="line"><span class="built_in">console</span>.log(obj.getName()());</div><div class="line"></div><div class="line">eg3:</div><div class="line"><span class="keyword">var</span> batch = [];</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;<span class="number">5</span>; i++)&#123;</div><div class="line">	batch.push(<span class="function"><span class="keyword">function</span> <span class="title">closure</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		<span class="built_in">console</span>.log(i);</div><div class="line">	&#125;);</div><div class="line">&#125;</div><div class="line">batch.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">f</span>)</span>&#123;f();&#125;);</div><div class="line"></div><div class="line">上述答案好好思考一下！</div></pre></td></tr></table></figure></p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/04/CSS3绘制聊天气泡/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Suixin">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/head-image.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="suixin">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="suixin" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/04/CSS3绘制聊天气泡/" itemprop="url">
-                  CSS3绘制聊天气泡
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-04T06:05:25+08:00">
-                2017-01-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h2 id="CSS3绘制聊天气泡"><a href="#CSS3绘制聊天气泡" class="headerlink" title="CSS3绘制聊天气泡"></a>CSS3绘制聊天气泡</h2><h3 id="1-先看效果图再介绍实现方法"><a href="#1-先看效果图再介绍实现方法" class="headerlink" title="1. 先看效果图再介绍实现方法^_^:"></a>1. 先看效果图再介绍实现方法^_^:</h3><p><img src="/images/2017010401.png" alt="气泡效果图"></p>
-<ul>
-<li>上图第一个是绘制的三角形</li>
-<li>第二个是利用三角形作为气泡边</li>
-<li>第三个是利用小圆角作为气泡边</li>
-</ul>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/04/CSS3绘制聊天气泡/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/04/CSS3绘制聊天气泡/" rel="next" title="CSS3绘制聊天气泡">
+                <i class="fa fa-chevron-left"></i> CSS3绘制聊天气泡
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
+          <span class="post-nav-divider"></span>
 
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/01/Hexo搭建个人博客详细过程/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Suixin">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/head-image.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="suixin">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="suixin" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/01/Hexo搭建个人博客详细过程/" itemprop="url">
-                  Hexo搭建个人博客详细过程
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-01T08:13:17+08:00">
-                2017-01-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h2 id="Hexo搭建个人博客详细过程"><a href="#Hexo搭建个人博客详细过程" class="headerlink" title="Hexo搭建个人博客详细过程"></a>Hexo搭建个人博客详细过程</h2><h3 id="1-环境配置："><a href="#1-环境配置：" class="headerlink" title="1. 环境配置："></a>1. 环境配置：</h3><ol>
-<li>下载安装<a href="https://git-scm.com/download/">git</a>;</li>
-</ol>
-<ol>
-<li>下载安装<a href="https://nodejs.org/en/">Node.js</a>; //最好安装稳定版的Node</li>
-</ol>
-<ol>
-<li>申请<a href="https://github.com/">github</a>账户; //如果已有，请飘过此句</li>
-</ol>
-<h3 id="2-hexo安装："><a href="#2-hexo安装：" class="headerlink" title="2. hexo安装："></a>2. hexo安装：</h3>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/01/Hexo搭建个人博客详细过程/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -685,6 +447,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -704,8 +470,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/head-image.png"
@@ -801,6 +576,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript的作用域与闭包"><span class="nav-number">1.</span> <span class="nav-text">JavaScript的作用域与闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的作用域"><span class="nav-number">1.1.</span> <span class="nav-text">变量的作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">1.2.</span> <span class="nav-text">闭包</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -910,6 +701,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
