@@ -1,0 +1,871 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="google-site-verification" content="GugP-NdzCmduBwJH4Z6T9GZY-_nkvR3u8VrXFdyMPaI" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/head-image-32*32.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="JavaScript数组与高阶函数
+JS中的数组方法
+&amp;ensp;&amp;ensp;数组，都不陌生，几乎所有语言都有。JS中的数组其实也算是一种特殊的对象，它有着一些自己的方法，这里简单介绍一下数组的常用方法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript数组与高阶函数">
+<meta property="og:url" content="http://yoursite.com/2017/01/20/JavaScript数组与高阶函数/index.html">
+<meta property="og:site_name" content="suixin">
+<meta property="og:description" content="JavaScript数组与高阶函数
+JS中的数组方法
+&amp;ensp;&amp;ensp;数组，都不陌生，几乎所有语言都有。JS中的数组其实也算是一种特殊的对象，它有着一些自己的方法，这里简单介绍一下数组的常用方法。">
+<meta property="og:updated_time" content="2017-01-20T02:52:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript数组与高阶函数">
+<meta name="twitter:description" content="JavaScript数组与高阶函数
+JS中的数组方法
+&amp;ensp;&amp;ensp;数组，都不陌生，几乎所有语言都有。JS中的数组其实也算是一种特殊的对象，它有着一些自己的方法，这里简单介绍一下数组的常用方法。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/01/20/JavaScript数组与高阶函数/"/>
+
+
+
+
+
+  <title> JavaScript数组与高阶函数 | suixin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-90477212-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">suixin</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">More And More Study Skill</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-search">
+          <a href="/search" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-search"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-friend">
+          <a href="/friend" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user-secret"></i> <br />
+            
+            友情链接
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/20/JavaScript数组与高阶函数/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Suixin">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/head-image.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="suixin">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="suixin" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JavaScript数组与高阶函数
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-20T10:51:36+08:00">
+                2017-01-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/01/20/JavaScript数组与高阶函数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/20/JavaScript数组与高阶函数/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="JavaScript数组与高阶函数"><a href="#JavaScript数组与高阶函数" class="headerlink" title="JavaScript数组与高阶函数"></a>JavaScript数组与高阶函数</h1><blockquote>
+<h2 id="JS中的数组方法"><a href="#JS中的数组方法" class="headerlink" title="JS中的数组方法"></a>JS中的数组方法</h2></blockquote>
+<p>&ensp;&ensp;数组，都不陌生，几乎所有语言都有。JS中的数组其实也算是一种特殊的对象，它有着一些自己的方法，这里简单介绍一下数组的常用方法。<br><a id="more"></a></p>
+<ol>
+<li>split()</li>
+</ol>
+<p>作用：将一个字符串按指定元素分割后组成一个数组。</p>
+<p>split(s/regexp, howmany)：其第一个参数（必填）是指定的字符串（如果为指定为空的话，则会将字符串中的每个字符之间都分开），第二个参数（选填）为指定数组的大小，可不传就忽略大小：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> str = <span class="string">'What is your name ?'</span>;</div><div class="line">str.split(<span class="string">' '</span>);<span class="comment">//["What", "is", "your", "name", "?"]</span></div><div class="line">str.split(<span class="regexp">/\s+/</span>);<span class="comment">//["What", "is", "your", "name", "?"]</span></div><div class="line">str.split(<span class="string">''</span>);<span class="comment">//["W", "h", "a", "t", " ", ……]</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li>splice</li>
+</ol>
+<p>作用：用于删除数组中某一位的元素，并且可以在删除位置进行添加元素。</p>
+<p>splice(index, howmany, item1…itemx)：其第一个参数(必填)从手什么位置开始，第二个参数（必填）是指明删除几个元素开始。第三个后面开始的参数（选填）就是向数组中新添加的元素：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>];</div><div class="line">arr.splice(<span class="number">1</span>,<span class="number">1</span>);<span class="comment">//["one", "three"]</span></div><div class="line">arr.splice(<span class="number">1</span>,<span class="number">0</span>,<span class="string">'two'</span>,<span class="string">'four'</span>,<span class="string">'five'</span>);</div><div class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//["one", "two", "four", "five", "three"]</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li>push()&amp;&amp;pop()</li>
+</ol>
+<p>作用：在数组末尾添加&amp;&amp;删除元素。</p>
+<p>push(element1, element2)：参数为要加入数组的新元素，返回新数组的长度。<br>pop()：直接删除并返回数组的最后一个元素<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>];</div><div class="line"><span class="built_in">console</span>.log(arr.push(<span class="string">'four'</span>));<span class="comment">//4</span></div><div class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//["one", "two", "three", "four"]</span></div><div class="line">arr.pop();</div><div class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//["one", "two", "three"]</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li>unshift()&amp;&amp;shift()</li>
+</ol>
+<p>作用：在数组头部添加&amp;&amp;删除元素。</p>
+<p>unshift(element1, element2)：参数为要加入数组的新元素，返回新数组的长度。<br>shift()：直接删除并返回数组的最d第一个元素<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>];</div><div class="line"><span class="built_in">console</span>.log(arr.unshift(<span class="string">'four'</span>));<span class="comment">//4</span></div><div class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//["four", one", "two", "three"]</span></div><div class="line">arr.shift();</div><div class="line"><span class="built_in">console</span>.log(arr);<span class="comment">//["one", "two", "three"]</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li>join()</li>
+</ol>
+<p>作用：将字符串数组拼接成单个字符串。</p>
+<p>join(separator)：参数（可选）是指定要使用的分隔符，默认是逗号：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>];</div><div class="line"><span class="built_in">console</span>.log(arr.join());<span class="comment">//one,two,three</span></div><div class="line"><span class="built_in">console</span>.log(arr.join(<span class="string">'.'</span>));<span class="comment">//one.two.three</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li>reverse()</li>
+</ol>
+<p>作用：翻转数组的顺序，返回排序后的数组，原数组顺序也发生改变。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>];</div><div class="line"><span class="built_in">console</span>.log(arr.reverse());<span class="comment">//["three", "two", "one"]</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li>sort()</li>
+</ol>
+<p>作用：按字符串升序排列数组项，返回排序后的数组，原数组顺序也发生改变。</p>
+<p>sort(sortby)：参数（可选）是一个函数，按照函数规则进行排序<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>];</div><div class="line"><span class="built_in">console</span>.log(arr.sort());<span class="comment">//["one", "three", "two"]</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li>concat()</li>
+</ol>
+<p>作用：用于合并两个数组。</p>
+<p>concat(arr1, arr2, … arrx)：参数（必须）可以是具体值也可以是数组对象。可以是任意多个：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>];</div><div class="line"><span class="built_in">console</span>.log(arr.concat(<span class="string">'four'</span>, <span class="string">'five'</span>));<span class="comment">//["one", "two", "three", "four", "five"]</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li>slice()</li>
+</ol>
+<p>作用：选取选定的数组元素返回一个子数组，不改变原数组。</p>
+<p>slice(start, end)：第一个参数（必选）从何处开始选取。第二个参数（可选）借书处，默认值是到数组尾部。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>];</div><div class="line"><span class="built_in">console</span>.log(arr.slice(<span class="number">1</span>);<span class="comment">//["two", "three"]</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li>indexOf(search, start)</li>
+</ol>
+<p>作用：返回search首个出现的位置，从start位置开始,如果没匹配到返回-1</p>
+<p>indexOf(search, start)：第一个参数（必须）需要检索的字符串，第二个选填<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> str = <span class="string">'hang ban guan jia'</span>;</div><div class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">"ban"</span>));<span class="comment">//5</span></div><div class="line"><span class="built_in">console</span>.log(str.indexOf(<span class="string">"gao"</span>));<span class="comment">//-1</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<h2 id="JS中的高阶函数"><a href="#JS中的高阶函数" class="headerlink" title="JS中的高阶函数"></a>JS中的高阶函数</h2></blockquote>
+<p>国际惯例，介绍一下概念：如果一个函数操作其他函数，即将其他函数作为参数或者将函数作为返回值，就叫高阶函数。<br>简单来说，就像下面这样的：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">fucntion foo2(</span>)</span>&#123;&#125;) &#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">foo3</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>写个最基础的例子吧，求加法结果：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">b</span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> a + b;  </div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> add2 = add(<span class="number">2</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(add2(<span class="number">3</span>));<span class="comment">//5</span></div></pre></td></tr></table></figure></p>
+<p>其实这里不是扯淡高阶函数是什么怎么写的，主要是来说明JS中已实现的常用的高阶函数：</p>
+<ol>
+<li>forEach()：</li>
+</ol>
+<p>forEach()会自动遍历数组中的每一项，内部方法接收的参数为数组的每一项的值。</p>
+<p><strong>实现：</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">forEach</span>(<span class="params">array, action</span>) </span>&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++)</div><div class="line">        action(array[i]);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>应用：</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> num = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>], sum = <span class="number">0</span>;</div><div class="line">num.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</div><div class="line">    sum += n;</div><div class="line">&#125;);</div><div class="line"><span class="built_in">console</span>.log(sum);<span class="comment">//15</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li>filter()</li>
+</ol>
+<p>filter()会将数组按照接收的函数规则进行过滤后返回，接收的函数参数为数组的每一项值，原数组不发生改变。</p>
+<p><strong>实现</strong>：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">filter</span>(<span class="params">array, action</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> passed = [];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++)&#123;</div><div class="line">        <span class="keyword">if</span>(action(array[i]))</div><div class="line">            passed.push(array[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> passed;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>应用</strong>：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> suixin = [</div><div class="line">    &#123;</div><div class="line">        <span class="attr">name</span>: <span class="string">'suixin1'</span>,</div><div class="line">        <span class="attr">sex</span>: <span class="string">'m'</span>,</div><div class="line">        <span class="attr">born</span>: <span class="number">1991</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="attr">name</span>: <span class="string">'suixin2'</span>,</div><div class="line">        <span class="attr">sex</span>: <span class="string">'m'</span>,</div><div class="line">        <span class="attr">born</span>: <span class="number">1992</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="attr">name</span>: <span class="string">'suixin3'</span>,</div><div class="line">        <span class="attr">sex</span>: <span class="string">'wm'</span>,</div><div class="line">        <span class="attr">born</span>: <span class="number">1993</span></div><div class="line">    &#125;</div><div class="line">];</div><div class="line"></div><div class="line">suixin.filter(<span class="function"><span class="keyword">function</span>(<span class="params">person</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> person.sex == <span class="string">'m'</span>;</div><div class="line">&#125;);<span class="comment">//挑选出对象中sex属性为'm'的对象。即suixin1,suixin2。</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li>map()</li>
+</ol>
+<p>map()接收一个函数，按照函数规则将数组中每一个项执行一遍后将新得到的值作为一个数组返回。原数组不变。</p>
+<p><strong>实现：</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">map</span>(<span class="params">array, action</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> mapped = [];</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++)&#123;</div><div class="line">        mapped.push(action(array[i]));</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> mapped;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>应用：</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">还是上面的suixin数组：</div><div class="line">suixin.map(<span class="function"><span class="keyword">function</span>(<span class="params">person</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> person.name;</div><div class="line">&#125;);<span class="comment">//["suixin1", "suixin2", "suixin3"]</span></div></pre></td></tr></table></figure></p>
+<ol>
+<li>reduce()</li>
+</ol>
+<p>reduce()有三个参数，第一个为使用的数组（必须），第二个（必须）是一个执行操作的函数，数组中的每一个元素都会调用，第三个是初始值（可选），第一次调用时会将此值作为参数。reduce是按函数规则来进行数据汇总。</p>
+<p><strong>实现：</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">reduce</span>(<span class="params">array, action, start</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> current = start;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++)&#123;</div><div class="line">        current = action(current, array[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> current;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><strong>应用：</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">还是上面的suixin数组：</div><div class="line">suixin.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">min, cur</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(cur.born &lt; min.born)&#123;</div><div class="line">        <span class="keyword">return</span> cur;</div><div class="line">    &#125; <span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> min;</div><div class="line">    &#125;</div><div class="line">&#125;);<span class="comment">//&#123;name:"suixin1"...&#125;找出年龄最大的对象。</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>以上几个高阶函数均可将数组作为第一个参数使用。（如果不用.字符）</li>
+</ul>
+<blockquote>
+<p>##小结：</p>
+</blockquote>
+<p>我觉得JS最常用的应该就是对象了，数组作为一个特殊的对象，以上都是常用的一些数组的方法，善于利用这些方法应该可以减少不少的代码量。</p>
+<p>周二珂：走在冷风中</p>
+<center><br><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=32450986&auto=1&height=66"></iframe><br></center>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/12/JavaScript的作用域与闭包/" rel="next" title="JavaScript的作用域与闭包">
+                <i class="fa fa-chevron-left"></i> JavaScript的作用域与闭包
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/01/20/JavaScript数组与高阶函数/"
+     data-title="JavaScript数组与高阶函数"
+     data-content=""
+     data-url="http://yoursite.com/2017/01/20/JavaScript数组与高阶函数/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/01/20/JavaScript数组与高阶函数/"
+           data-title="JavaScript数组与高阶函数" data-url="http://yoursite.com/2017/01/20/JavaScript数组与高阶函数/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head-image.png"
+               alt="Suixin" />
+          <p class="site-author-name" itemprop="name">Suixin</p>
+          <p class="site-description motion-element" itemprop="description">reading</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="Link" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="Link" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="Link" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.sryria.com" title="sry" target="_blank">sry</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xuanfengge.com" title="轩枫阁" target="_blank">轩枫阁</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript数组与高阶函数"><span class="nav-number">1.</span> <span class="nav-text">JavaScript数组与高阶函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JS中的数组方法"><span class="nav-number">1.1.</span> <span class="nav-text">JS中的数组方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS中的高阶函数"><span class="nav-number">1.2.</span> <span class="nav-text">JS中的高阶函数</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Suixin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 提供
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a> &&
+  更新By - 
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    Suixin
+  </a>
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">站点共4.2k字</span>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"suixin1"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+<script type="text/javascript" src="/js/src/particle.js"></script>
+</html>
