@@ -1,0 +1,851 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="google-site-verification" content="GugP-NdzCmduBwJH4Z6T9GZY-_nkvR3u8VrXFdyMPaI" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="css," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/head-image-32*32.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="神奇的box-shadow1. box-shadow简介
+1.1 w3c上的简要说明
+
+&amp;ensp;&amp;ensp;box-shadow属性向2边框添加一个或者多个阴影。
+box-shadow: h-shadow  v-shadow  blur  spread  color  inset;
+
+h-shadow： 必需，水平阴影的位置，允许为负值。
+v-shadow：必需，垂直阴影的位置，允许为负值。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="神奇的box-shadow">
+<meta property="og:url" content="http://yoursite.com/2017/02/10/神奇的box-shadow/index.html">
+<meta property="og:site_name" content="suixin">
+<meta property="og:description" content="神奇的box-shadow1. box-shadow简介
+1.1 w3c上的简要说明
+
+&amp;ensp;&amp;ensp;box-shadow属性向2边框添加一个或者多个阴影。
+box-shadow: h-shadow  v-shadow  blur  spread  color  inset;
+
+h-shadow： 必需，水平阴影的位置，允许为负值。
+v-shadow：必需，垂直阴影的位置，允许为负值。">
+<meta property="og:image" content="http://yoursite.com/images/2017021001.png">
+<meta property="og:image" content="http://yoursite.com/images/2017021002.png">
+<meta property="og:image" content="http://yoursite.com/images/2017021003.png">
+<meta property="og:image" content="http://yoursite.com/images/2017021004.png">
+<meta property="og:image" content="http://yoursite.com/images/2017021005.png">
+<meta property="og:image" content="http://yoursite.com/images/2017021006.png">
+<meta property="og:image" content="http://yoursite.com/images/2017021007.png">
+<meta property="og:image" content="http://yoursite.com/images/2017021008.png">
+<meta property="og:updated_time" content="2017-02-10T02:08:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="神奇的box-shadow">
+<meta name="twitter:description" content="神奇的box-shadow1. box-shadow简介
+1.1 w3c上的简要说明
+
+&amp;ensp;&amp;ensp;box-shadow属性向2边框添加一个或者多个阴影。
+box-shadow: h-shadow  v-shadow  blur  spread  color  inset;
+
+h-shadow： 必需，水平阴影的位置，允许为负值。
+v-shadow：必需，垂直阴影的位置，允许为负值。">
+<meta name="twitter:image" content="http://yoursite.com/images/2017021001.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/02/10/神奇的box-shadow/"/>
+
+
+
+
+
+  <title> 神奇的box-shadow | suixin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-90477212-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">suixin</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">More And More Study Skill</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-search">
+          <a href="/search" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-search"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于我
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-friend">
+          <a href="/friend" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user-secret"></i> <br />
+            
+            友情链接
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/10/神奇的box-shadow/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Suixin">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/head-image.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="suixin">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="suixin" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                神奇的box-shadow
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-10T10:07:11+08:00">
+                2017-02-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/10/神奇的box-shadow/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/10/神奇的box-shadow/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="神奇的box-shadow"><a href="#神奇的box-shadow" class="headerlink" title="神奇的box-shadow"></a>神奇的box-shadow</h1><h2 id="1-box-shadow简介"><a href="#1-box-shadow简介" class="headerlink" title="1. box-shadow简介"></a>1. box-shadow简介</h2><blockquote>
+<p>1.1 w3c上的简要说明</p>
+</blockquote>
+<p>&ensp;&ensp;box-shadow属性向2边框添加一个或者多个阴影。</p>
+<p>box-shadow: h-shadow  v-shadow  blur  spread  color  inset;</p>
+<ul>
+<li>h-shadow： 必需，水平阴影的位置，允许为负值。</li>
+<li>v-shadow：必需，垂直阴影的位置，允许为负值。</li>
+<li>blur：可选，模糊距离</li>
+<li>spread：可选，阴影的尺寸</li>
+<li>color：可选，阴影的颜色</li>
+<li>inset：可选，将外阴影改为内阴影。</li>
+</ul>
+<blockquote>
+<p>1.2 自己测试结论</p>
+</blockquote>
+<p>（1）、当只有两个必需值的时候，box-shadow: 10px 10px:</p>
+<p>此时水平和垂直方向会有一个多出来的10px黑色条，说明阴影的默认颜色是黑色，如下图：</p>
+<p><img src="/images/2017021001.png" alt="效果图1"></p>
+<p>（2）、当有三个值的时候，box-shadow: 10px 10px blueviolet:</p>
+<p>此时一般第三个值是表示阴影的颜色值，tips:颜色值可放在第一个位置，如下图：</p>
+<p><img src="/images/2017021002.png" alt="效果图2"></p>
+<p>（3）、当有四个值的时候，box-shadow: 10px 10px 5px blueviolet:</p>
+<p>此时的第三个值一般表示阴影的模糊程度，值越大，阴影就越模糊，如下图：</p>
+<p><img src="/images/2017021003.png" alt="效果图3"></p>
+<p>（4）、当有五个值的时候，box-shadow: 10px 10px 5px 5px blueviolet:</p>
+<p>此时的第四个值指的是 阴影的尺寸，值越大，阴影尺寸越大，甚至可以超过原图，如下图：</p>
+<p><img src="/images/2017021004.png" alt="效果图4"></p>
+<p>（5）、当有六个值的时候，box-shadow: 10px 10px 5px 5px blueviolet inset:</p>
+<p>此时的第六个值表示阴影在内，没有此值阴影就在外，如下图：</p>
+<p><img src="/images/2017021005.png" alt="效果图5"></p>
+<h2 id="2-神奇的box-shadow"><a href="#2-神奇的box-shadow" class="headerlink" title="2. 神奇的box-shadow"></a>2. 神奇的box-shadow</h2><p>&ensp;&ensp;不就是一个box-shadow的阴影属性嘛，为什么说它神奇呢？我们平时在使用box-shadow一般都是给边框加点阴影效果，使整个渲染效果看起来有立体感；另外我们可以利用box-shadow进行一些简单的绘图。</p>
+<blockquote>
+<p>2.1 利用box-shadow做立体效果</p>
+</blockquote>
+<p><img src="/images/2017021006.png" alt="立体效果"></p>
+<p>其实立体效果很简单，给图片加上box-shadow属性后，设置相应的便宜距离和模糊值就好了<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">下面的pic1没有阴影，pic2有了阴影发现阴影的图片看起来具有立体效果。</div><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Dimensional<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">      .pic1 &#123;</div><div class="line">        margin-top: 30px;</div><div class="line">        margin-left: 30px;</div><div class="line">      &#125;</div><div class="line">      .pic2 &#123;</div><div class="line">        float: right;</div><div class="line">        margin-top: 30px;</div><div class="line">        margin-right: 30px;</div><div class="line">        box-shadow: 8px 8px 10px black;</div><div class="line">      &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"pic1"</span> <span class="attr">src</span>=<span class="string">"mmd.png"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">class</span>=<span class="string">"pic2"</span> <span class="attr">src</span>=<span class="string">"mmd.png"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>2.2 box-shadow绘制一朵云</p>
+</blockquote>
+<p><img src="/images/2017021007.png" alt="云"></p>
+<p>如何绘制一朵云彩呢？我们可以利用多个box-shadow，使有的阴影重叠，多个不同大小的阴影组合起来形成一朵云彩。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>cloud<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">      #div1 &#123;</div><div class="line">        width: 170px;</div><div class="line">        height: 170px;</div><div class="line">        background: #60B1F5;</div><div class="line">        position: relative;</div><div class="line">      &#125;</div><div class="line">      .cloud &#123;</div><div class="line">        background: #fff;</div><div class="line">        border-radius: 50%;</div><div class="line">        width: 50px;</div><div class="line">        height: 50px;</div><div class="line">        display: block;</div><div class="line">        box-shadow: </div><div class="line">          #fff 65px -15px 0 -5px,</div><div class="line">          #fff 25px -25px,</div><div class="line">          #fff 30px 10px,</div><div class="line">          #fff 60px 15px 0 -10px,</div><div class="line">          #fff 85px 5px 0 -5px;</div><div class="line">        position: absolute;</div><div class="line">        top: 50px;</div><div class="line">        left: 20px;</div><div class="line">      &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"cloud"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>2.3 利用box-shadow绘制一轮明月</p>
+</blockquote>
+<p><img src="/images/2017021008.png" alt="明月"></p>
+<p>利用绘制云彩的思路，我们也可以先绘制一个圆，然后将圆的背景色设置与大背景色相同，然后利用box-shadow绘制一个月亮形的阴影与背景色不一样即可。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>moon<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">      #div1 &#123;</div><div class="line">        width: 170px;</div><div class="line">        height: 170px;</div><div class="line">        background: #60B1F5;</div><div class="line">        position: relative;</div><div class="line">      &#125;</div><div class="line">      .moon &#123;</div><div class="line">        background: #60B1F5;</div><div class="line">        border-radius: 50%;</div><div class="line">        width: 100px;</div><div class="line">        height: 100px;</div><div class="line">        display: block;</div><div class="line">        box-shadow: #fff -35px 0;</div><div class="line">        position: absolute;</div><div class="line">        top: 30px;</div><div class="line">        left: 70px;</div><div class="line">      &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span>&gt;</span></div><div class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"moon"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/02/03/正则表达式入门/" rel="next" title="正则表达式入门">
+                <i class="fa fa-chevron-left"></i> 正则表达式入门
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/02/10/神奇的box-shadow/"
+     data-title="神奇的box-shadow"
+     data-content=""
+     data-url="http://yoursite.com/2017/02/10/神奇的box-shadow/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/10/神奇的box-shadow/"
+           data-title="神奇的box-shadow" data-url="http://yoursite.com/2017/02/10/神奇的box-shadow/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head-image.png"
+               alt="Suixin" />
+          <p class="site-author-name" itemprop="name">Suixin</p>
+          <p class="site-description motion-element" itemprop="description">reading</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="Link" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="Link" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="Link" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.sryria.com" title="sry" target="_blank">sry</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.xuanfengge.com" title="轩枫阁" target="_blank">轩枫阁</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#神奇的box-shadow"><span class="nav-number">1.</span> <span class="nav-text">神奇的box-shadow</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-box-shadow简介"><span class="nav-number">1.1.</span> <span class="nav-text">1. box-shadow简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-神奇的box-shadow"><span class="nav-number">1.2.</span> <span class="nav-text">2. 神奇的box-shadow</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Suixin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 提供
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a> &&
+  更新By - 
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    Suixin
+  </a>
+</div>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">站点共8.0k字</span>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"suixin1"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+<script type="text/javascript" src="/js/src/particle.js"></script>
+</html>
