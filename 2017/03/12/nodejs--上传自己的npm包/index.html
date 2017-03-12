@@ -69,7 +69,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="nodejs," />
 
 
 
@@ -85,21 +85,49 @@
 
 
 
-<meta name="description" content="hexo的一些扩展功能1. 发布一篇文章&amp;ensp;&amp;ensp;hexo文章编写最好使用markdown格式，因为hexo会自动帮忙转换成html的。
-&amp;ensp;&amp;ensp;首先写好一篇文章，然后把文章放在主目录的source-&amp;gt;_posts下，然后使用下面命令重新上传一遍即可：123hexo g //hexo generate的简写//hexo g完成后再输入：hexo d //hexo">
+<meta name="description" content="nodejs–上传自己的npm包
+本文的实现环境
+
+
+window10
+node （node的win版本6.10.0）
+git （git的win版本2.6.4）
+
+
+本文的实现结果
+
+&amp;ensp;&amp;ensp;自己在JS中写一个功能性函数，封装成node模块，上传至npm包中，然后在任何机器上使用npm可以下载到你的包，并使用你的函数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo的一些扩展功能">
-<meta property="og:url" content="http://yoursite.com/2017/02/17/hexo的一些扩展功能/index.html">
+<meta property="og:title" content="nodejs--上传自己的npm包">
+<meta property="og:url" content="http://yoursite.com/2017/03/12/nodejs--上传自己的npm包/index.html">
 <meta property="og:site_name" content="suixin">
-<meta property="og:description" content="hexo的一些扩展功能1. 发布一篇文章&amp;ensp;&amp;ensp;hexo文章编写最好使用markdown格式，因为hexo会自动帮忙转换成html的。
-&amp;ensp;&amp;ensp;首先写好一篇文章，然后把文章放在主目录的source-&amp;gt;_posts下，然后使用下面命令重新上传一遍即可：123hexo g //hexo generate的简写//hexo g完成后再输入：hexo d //hexo">
-<meta property="og:image" content="http://yoursite.com/images/2017021701.png">
-<meta property="og:updated_time" content="2017-02-17T09:12:51.000Z">
+<meta property="og:description" content="nodejs–上传自己的npm包
+本文的实现环境
+
+
+window10
+node （node的win版本6.10.0）
+git （git的win版本2.6.4）
+
+
+本文的实现结果
+
+&amp;ensp;&amp;ensp;自己在JS中写一个功能性函数，封装成node模块，上传至npm包中，然后在任何机器上使用npm可以下载到你的包，并使用你的函数。">
+<meta property="og:updated_time" content="2017-03-12T09:42:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo的一些扩展功能">
-<meta name="twitter:description" content="hexo的一些扩展功能1. 发布一篇文章&amp;ensp;&amp;ensp;hexo文章编写最好使用markdown格式，因为hexo会自动帮忙转换成html的。
-&amp;ensp;&amp;ensp;首先写好一篇文章，然后把文章放在主目录的source-&amp;gt;_posts下，然后使用下面命令重新上传一遍即可：123hexo g //hexo generate的简写//hexo g完成后再输入：hexo d //hexo">
-<meta name="twitter:image" content="http://yoursite.com/images/2017021701.png">
+<meta name="twitter:title" content="nodejs--上传自己的npm包">
+<meta name="twitter:description" content="nodejs–上传自己的npm包
+本文的实现环境
+
+
+window10
+node （node的win版本6.10.0）
+git （git的win版本2.6.4）
+
+
+本文的实现结果
+
+&amp;ensp;&amp;ensp;自己在JS中写一个功能性函数，封装成node模块，上传至npm包中，然后在任何机器上使用npm可以下载到你的包，并使用你的函数。">
 
 
 
@@ -127,13 +155,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/02/17/hexo的一些扩展功能/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/12/nodejs--上传自己的npm包/"/>
 
 
 
 
 
-  <title> hexo的一些扩展功能 | suixin </title>
+  <title> nodejs--上传自己的npm包 | suixin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -285,7 +313,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/02/17/hexo的一些扩展功能/">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/12/nodejs--上传自己的npm包/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Suixin">
@@ -309,7 +337,7 @@
             
             
               
-                hexo的一些扩展功能
+                nodejs--上传自己的npm包
               
             
           </h1>
@@ -324,8 +352,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-17T17:12:55+08:00">
-                2017-02-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-12T17:42:07+08:00">
+                2017-03-12
               </time>
             
 
@@ -343,8 +371,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/17/hexo的一些扩展功能/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/17/hexo的一些扩展功能/" itemprop="commentCount"></span>
+                <a href="/2017/03/12/nodejs--上传自己的npm包/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/12/nodejs--上传自己的npm包/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -370,32 +398,49 @@
       
 
       
-        <h1 id="hexo的一些扩展功能"><a href="#hexo的一些扩展功能" class="headerlink" title="hexo的一些扩展功能"></a>hexo的一些扩展功能</h1><h2 id="1-发布一篇文章"><a href="#1-发布一篇文章" class="headerlink" title="1. 发布一篇文章"></a>1. 发布一篇文章</h2><p>&ensp;&ensp;hexo文章编写最好使用markdown格式，因为hexo会自动帮忙转换成html的。</p>
-<p>&ensp;&ensp;首先写好一篇文章，然后把文章放在主目录的source-&gt;_posts下，然后使用下面命令重新上传一遍即可：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo g //hexo generate的简写</div><div class="line">//hexo g完成后再输入：</div><div class="line">hexo d //hexo deploy的简写</div></pre></td></tr></table></figure></p>
-<p>如果文章中需要图片，放到主目录的source-&gt;images下，文章中路径填相对路径即可。</p>
-<p>当然，这里你还可以更改对markdown的解析方式，就在文章页对应的css中对markdown转换的相应标签添加样式。</p>
-<a id="more"></a>
-<h2 id="2-更改主题"><a href="#2-更改主题" class="headerlink" title="2. 更改主题"></a>2. 更改主题</h2><p>&ensp;&ensp;不知道从什么版本开始，hexo默认主题是叫landscape，这个主题我不太喜欢，所以可以去官网的<a href="https://hexo.io/themes/" target="_blank" rel="external">主题栏目</a>下，每个主题基本都发布在github上在。</p>
-<p>&ensp;&ensp;首先选好主题后下载到我们的blog目录的theme文件夹下，然后在主目录的_config.yml，找到theme，后面名字更改为我们下载的主题名字即可。知乎上也有人专门爬了各主题的星星数目排名</p>
-<p>&ensp;&ensp;主题目录下的_config.yml是这个主题的配置文件，想修改什么东西看主题说明即可，这里推荐一下<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">next</a>主题，这个主题介绍比较全面，样式比较简洁明了。</p>
-<p>&ensp;&ensp;再者，自己写一个主题吧，毕竟用别人总感觉不舒服，怎么写这里就不详细叙述了，得知道点swig或者ejs，可以模仿别人的主题文件格式来慢慢写。</p>
-<h2 id="3-绑定域名"><a href="#3-绑定域名" class="headerlink" title="3. 绑定域名"></a>3. 绑定域名</h2><p>&ensp;&ensp;绑定域名需要首先去申请一个域名吧，中国可能有大家所熟知的<a href="https://wanwang.aliyun.com/" target="_blank" rel="external">万网</a>，tips：现在申请域名后缀为（.com 和 .cn）的都需要实名认证了，不过认证一个也没啥。</p>
-<p>&ensp;&ensp;首先，要在blog中加CNAME文件，还是在主目录下的source文件夹中添加，注意，CNAME文件没有任何后缀名，它的内容就是你申请的域名。弄好后上传到github，还是用hexo g 和hexo d命令。</p>
-<p>&ensp;&ensp;在万网解析中，如下图所示：</p>
-<p><img src="/images/2017021701.png" alt="域名解析"></p>
-<p>其中前两个是github的，加上去会访问的更快，而且有的不加可能会导致404。还有会导致404错误的是申请仓库时候未按照我上一篇中介绍的命名格式创建仓库。</p>
-<h2 id="4-多说评论框"><a href="#4-多说评论框" class="headerlink" title="4. 多说评论框"></a>4. 多说评论框</h2><p>&ensp;&ensp;首先在<a href="duoshuo.com">多说官网</a>上注册一个账号，然后按照它的一步步说明进行添加，成功后你会得到一个多说和你域名相关的类似域名的，它还会给你一段代码，你把代码复制到主题的pages页面代码上（每个主题可能位置不一样，而且有的主题说明中已经有了duoshuo的配置了，只用在配置文件中配置一下即可）。</p>
-<h2 id="5-More-and-More"><a href="#5-More-and-More" class="headerlink" title="5. More and More"></a>5. More and More</h2><p>&ensp;&ensp;这里说一下hexo一些其他的功能，实现大家慢慢发现去吧\^_^：</p>
+        <h1 id="nodejs–上传自己的npm包"><a href="#nodejs–上传自己的npm包" class="headerlink" title="nodejs–上传自己的npm包"></a>nodejs–上传自己的npm包</h1><blockquote>
+<p>本文的实现环境</p>
+</blockquote>
 <ul>
-<li>在每个文章中添加背景音乐</li>
-<li>做Google分析和baidu分析</li>
-<li>给主题添加一个动态背景？？</li>
-<li>自己写一个主题自己用</li>
-<li>内容分享功能</li>
-<li>站内搜索功能</li>
-<li>多说热评</li>
+<li>window10</li>
+<li>node （node的win版本6.10.0）</li>
+<li>git （git的win版本2.6.4）</li>
 </ul>
-<p>等等更多优质、好玩功能等待你去发现和实现…</p>
+<blockquote>
+<p>本文的实现结果</p>
+</blockquote>
+<p>&ensp;&ensp;自己在JS中写一个功能性函数，封装成node模块，上传至npm包中，然后在任何机器上使用npm可以下载到你的包，并使用你的函数。</p>
+<a id="more"></a>
+<blockquote>
+<p>实现过程</p>
+</blockquote>
+<p>1.创建一个跟目录（就是创建一个文件夹），在文件夹下创建JS文件，并写上自己的功能函数，这里我写了一个简单的数组拼接成字符串的函数。如下所示：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> suixin = [<span class="string">"Hello"</span>, <span class="string">"Suixin"</span>, <span class="string">"!"</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">splicingWords</span>(<span class="params">arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> suixin_word = <span class="string">""</span>;</div><div class="line">    <span class="keyword">for</span>(idx <span class="keyword">in</span> arr) &#123;</div><div class="line">        suixin_word += arr[idx]+<span class="string">' '</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> suixin_word;</div><div class="line">&#125;</div><div class="line">exports.splicingWords = splicingWords;</div></pre></td></tr></table></figure></p>
+<p>2.在根目录下使用npm init命令也好，直接创建packge.json文件也好，添加上说明，如下：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"author"</span>: <span class="string">"suixin"</span>,</div><div class="line">    <span class="attr">"name"</span>: <span class="string">"splicing_words"</span>,</div><div class="line">    <span class="attr">"version"</span>: <span class="string">"0.1.1"</span>,</div><div class="line">    <span class="attr">"description"</span>: <span class="string">"splicing Words"</span>,</div><div class="line">    <span class="attr">"main"</span>: <span class="string">"suixin"</span>,</div><div class="line">    <span class="attr">"repository"</span>: &#123;</div><div class="line">        <span class="attr">"type"</span>: <span class="string">"git"</span>,</div><div class="line">        <span class="attr">"url"</span>: <span class="string">"https://github.com/suixin520/node_test"</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"keywords"</span>: [</div><div class="line">        <span class="string">"splicing"</span>,</div><div class="line">        <span class="string">"words"</span></div><div class="line">    ],</div><div class="line">    <span class="attr">"dependencies"</span>: &#123;</div><div class="line">        </div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"engines"</span>: &#123;</div><div class="line">        <span class="attr">"node"</span>: <span class="string">"*"</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>3.在根目录下使用npm pack命令，即可形成一个本地的nodejs封装模块。</p>
+<p>4.将代码上传至自己的github仓库，在package里面的repository的url就是代码仓库地址。</p>
+<p>5.在<a href="https://npmjs.org" target="_blank" rel="external">npm</a>官网上注册一个自己的账户，然后在根目录下执行npm adduser命令，依次将自己注册的用户名、密码、邮箱填写进去，显示logged …一串就好了。</p>
+<p>6.在根目录下执行npm publish命令，看到成功后，可以到官网自己账户下看，已经有一个自己的包了，这个包可以在任何机器上通过npm下载使用。</p>
+<p>7.测试，新建一个文件夹，使用npm install splicing_words后，在新建一个js文件，测试自己的功能是否正确：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> s = <span class="built_in">require</span>(<span class="string">'splicing_words'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> arr = [<span class="string">'test'</span>, <span class="string">'node'</span>, <span class="string">'success!'</span>];</div><div class="line"><span class="keyword">var</span> str = s.splicingWords(arr);</div><div class="line"><span class="built_in">console</span>.log(str);</div></pre></td></tr></table></figure></p>
+<p>打印出：test node success!即成功！</p>
+<blockquote>
+<p>遇坑</p>
+</blockquote>
+<ol>
+<li>npm adduser 一直报错</li>
+</ol>
+<ul>
+<li>首先，核对自己的填写是否正确（反正windows下密码填写时明文显示，有点无语）。</li>
+<li>我这里踩了个大坑，在注册时，我用户名填写suixin<em>520，然后也注册成功了，登录也成功了，在npm adduser一直报错，说我填写有问题，为此，我还特地将node的版本从4.2更新到了6.10，也没用。后来，我退出了npm官网的账号，再登录，发现登录不上了，说我用户名不合法（明明注册时是成功的）。最后我居然用suixin</em>这个用户名登录成功，简直不可思议，520仨数字不见了…然后用这个用户名去npm adduser，success！！！真是日了狗了。</li>
+<li>据说在mac上，有可能是.npmrc文件中多了一行配置：<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">registry=http:<span class="comment">//registry.npm.taobao.org</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>可能是下载时候把镜像源设置了吧，反正我暂时没遇到。</p>
+<ol>
+<li>npm publish 报错</li>
+</ol>
+<ul>
+<li>基本上错误就是package.json中的name起的有问题，要么不合法，要么和npm源已经有了这个name，换个特殊的name即可。</li>
+</ul>
 
       
     </div>
@@ -419,7 +464,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/nodejs/" rel="tag"># nodejs</a>
           
         </div>
       
@@ -428,8 +473,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/02/10/神奇的box-shadow/" rel="next" title="神奇的box-shadow">
-                <i class="fa fa-chevron-left"></i> 神奇的box-shadow
+              <a href="/2017/03/05/三个月以来的实习.../" rel="next" title="三个月以来的实习...">
+                <i class="fa fa-chevron-left"></i> 三个月以来的实习...
               </a>
             
           </div>
@@ -437,10 +482,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/05/三个月以来的实习.../" rel="prev" title="三个月以来的实习...">
-                三个月以来的实习... <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -455,10 +496,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2017/02/17/hexo的一些扩展功能/"
-     data-title="hexo的一些扩展功能"
+        <div class="ds-share flat" data-thread-key="2017/03/12/nodejs--上传自己的npm包/"
+     data-title="nodejs--上传自己的npm包"
      data-content=""
-     data-url="http://yoursite.com/2017/02/17/hexo的一些扩展功能/">
+     data-url="http://yoursite.com/2017/03/12/nodejs--上传自己的npm包/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -485,8 +526,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/02/17/hexo的一些扩展功能/"
-           data-title="hexo的一些扩展功能" data-url="http://yoursite.com/2017/02/17/hexo的一些扩展功能/">
+      <div class="ds-thread" data-thread-key="2017/03/12/nodejs--上传自己的npm包/"
+           data-title="nodejs--上传自己的npm包" data-url="http://yoursite.com/2017/03/12/nodejs--上传自己的npm包/">
       </div>
     
   </div>
@@ -626,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo的一些扩展功能"><span class="nav-number">1.</span> <span class="nav-text">hexo的一些扩展功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-发布一篇文章"><span class="nav-number">1.1.</span> <span class="nav-text">1. 发布一篇文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-更改主题"><span class="nav-number">1.2.</span> <span class="nav-text">2. 更改主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-绑定域名"><span class="nav-number">1.3.</span> <span class="nav-text">3. 绑定域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-多说评论框"><span class="nav-number">1.4.</span> <span class="nav-text">4. 多说评论框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-More-and-More"><span class="nav-number">1.5.</span> <span class="nav-text">5. More and More</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nodejs–上传自己的npm包"><span class="nav-number">1.</span> <span class="nav-text">nodejs–上传自己的npm包</span></a></li></ol></div>
             
 
           </div>
