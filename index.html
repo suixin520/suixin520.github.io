@@ -281,6 +281,142 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/09/Node.js-querystring模块/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Suixin">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/head-image.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="suixin">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="suixin" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/09/Node.js-querystring模块/" itemprop="url">
+                  Node.js-querystring模块
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-09T15:33:05+08:00">
+                2017-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/09/Node.js-querystring模块/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/05/09/Node.js-querystring模块/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Node-js-querystring模块"><a href="#Node-js-querystring模块" class="headerlink" title="Node.js-querystring模块"></a>Node.js-querystring模块</h1><h2 id="1-querystring-stringify"><a href="#1-querystring-stringify" class="headerlink" title="1.querystring.stringify()"></a>1.querystring.stringify()</h2><p>&ensp;&ensp;将一个对象转换成一个字符串。该方法通过遍历对象的自有属性，从一个给定的obj产生一个URL查询字符串。第一个参数为给定的对象，第二个参数为字符串的连接符，默认为&amp;，第三个是对象键值对之间的连接符，默认为=。</p>
+<p>eg：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">querystring.stringify(&#123;<span class="attr">foo</span>: <span class="string">'bar'</span>, <span class="attr">baz</span>: [<span class="string">'qux'</span>, <span class="string">'quux'</span>], <span class="attr">corge</span>: <span class="string">''</span> &#125;)</div><div class="line"></div><div class="line"><span class="comment">//返回 'foo=bar&amp;baz=qux&amp;baz=quux&amp;corge='</span></div><div class="line"></div><div class="line">querystring.stringify(&#123;<span class="attr">foo</span>: <span class="string">'bar'</span>, <span class="attr">baz</span>: <span class="string">'qux'</span>&#125;, <span class="string">';'</span>, <span class="string">':'</span>)</div><div class="line"></div><div class="line"><span class="comment">//返回 'foo:bar;baz:qux'</span></div></pre></td></tr></table></figure></p>
+<h2 id="2-querystring-parse"><a href="#2-querystring-parse" class="headerlink" title="2.querystring.parse()"></a>2.querystring.parse()</h2><p>&ensp;&ensp;将一个字符串反序列化，即将字符串转化为一个对象，参数与stringigy基本相同，只是第一个参数为一个字符串。</p>
+<p>eg:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">querystring.parse(<span class="string">'foo=bar&amp;abc=xyz&amp;abc=123'</span>)</div><div class="line"><span class="comment">//被解析为：</span></div><div class="line">&#123;</div><div class="line">    <span class="attr">foo</span>: <span class="string">'bar'</span>,</div><div class="line">    <span class="attr">abc</span>: [<span class="string">'xyz'</span>, <span class="string">'123'</span>]</div><div class="line">&#125;</div><div class="line"></div><div class="line">querystring.parse(<span class="string">'foo:bar;baz:qux'</span>, <span class="string">';'</span>, <span class="string">':'</span>)</div><div class="line"><span class="comment">//被解析为：</span></div><div class="line">&#123;</div><div class="line">    <span class="attr">foo</span>: <span class="string">'bar'</span>,</div><div class="line">    <span class="attr">baz</span>: <span class="string">'qux'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="3-querystring-escape-、querystring-unescape"><a href="#3-querystring-escape-、querystring-unescape" class="headerlink" title="3.querystring.escape()、querystring.unescape()"></a>3.querystring.escape()、querystring.unescape()</h2><p>&ensp;&ensp;前者是将字符串转义，即将给定的str执行URL百分号编码，该方法提供querystring.stringify()使用的，是为了在需要时给querystirng.escape赋值一个函数来重写编码的实现。</p>
+<p>eg:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">querystring.escape(<span class="string">'随心'</span>)</div><div class="line"><span class="comment">//得到：'%E9%E9A%8F%E5%BF%83'</span></div></pre></td></tr></table></figure></p>
+<p>&ensp;&ensp;后者是字符串的反转义，即将给定的str上的URL百分号编码的字符执行解码。</p>
+<p>eg:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">querystring.unescape(<span class="string">'%E9%E9A%8F%E5%BF%83'</span>)</div><div class="line"><span class="comment">//得到：'随心'</span></div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/22/Node.js-url模块/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1514,139 +1650,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/12/JavaScript的作用域与闭包/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Suixin">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/head-image.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="suixin">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="suixin" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/12/JavaScript的作用域与闭包/" itemprop="url">
-                  JavaScript的作用域与闭包
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-12T17:01:03+08:00">
-                2017-01-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/01/12/JavaScript的作用域与闭包/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/12/JavaScript的作用域与闭包/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="JavaScript的作用域与闭包"><a href="#JavaScript的作用域与闭包" class="headerlink" title="JavaScript的作用域与闭包"></a>JavaScript的作用域与闭包</h1><p>&ensp;&ensp;相信大家如果是从其他标准语言（Java、C++…）开始接触JavaScript时候都会对其变量和函数的使用很不适宜。JavaScript的变量与函数机制与其他编程语言不同，理解清楚其作用机制有助于我们理解更高级的特性。在JavaScript中，所有声明的变量和函数都是一个特殊的全局对象(obj)的属性值。<br>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/12/JavaScript的作用域与闭包/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1694,7 +1697,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1816,7 +1819,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">站点共12.6k字</span>
+  <span class="post-count">站点共12.9k字</span>
 </div>
 
 
