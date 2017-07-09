@@ -281,6 +281,165 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/09/Node.js-HTTP模块（1）/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Suixin">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/head-image.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="suixin">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="suixin" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/07/09/Node.js-HTTP模块（1）/" itemprop="url">
+                  Node.js-HTTP模块（1）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-09T21:22:22+08:00">
+                2017-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/09/Node.js-HTTP模块（1）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/07/09/Node.js-HTTP模块（1）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="Node-js-HTTP模块（1）"><a href="#Node-js-HTTP模块（1）" class="headerlink" title="Node.js-HTTP模块（1）"></a>Node.js-HTTP模块（1）</h1><h2 id="1-HTTP协议执行的整个过程"><a href="#1-HTTP协议执行的整个过程" class="headerlink" title="1.HTTP协议执行的整个过程"></a>1.HTTP协议执行的整个过程</h2><p>&ensp;&ensp;本文以chrome浏览器为例：</p>
+<ol>
+<li>chrome搜索自身的DNS缓存。（查看chrome缓存的地址：chrome://net-internals/#dns）</li>
+<li>搜索操作系统自身的DNS缓存。</li>
+<li>读取本地的host文件。（etc的host文件）</li>
+<li>浏览器发起一个DNS的调用。</li>
+</ol>
+<ul>
+<li>宽带运行商服务器查看本地自身的缓存。</li>
+<li>运营商服务器发起一个地带DNS解析请求。（baidu.com-&gt;com域的顶级IP地址-》请求-&gt;直到返回baidu.com域名的ip地址）</li>
+<li>运营商服务器把结果返回操作系统内核同时缓存起来。</li>
+<li>操作系统内核把结果返回给浏览器（（IP地址）。</li>
+<li>最终浏览器拿到www.baidu.com的地址。</li>
+</ul>
+<ol>
+<li>浏览器获取域名IP地址后发起HTTP的“三次握手”。</li>
+</ol>
+<ul>
+<li>TCP连接请求：层层路由设备-&gt;服务器端-&gt;网卡-&gt;内核TCP/IP协议栈-&gt;防火墙-&gt;web服务器。</li>
+<li>三次握手：客户端请问服务器是否可以发起请求-&gt;服务器端返回消息表明客户端可以发起请求-&gt;客户端向服务器端发起请求。</li>
+</ul>
+<ol>
+<li>TCP/IP连接建立起来后，浏览器就可以向服务器发送HTTP请求。比如：用HTTP的GET方法请求一个根域里的一个域名，洗衣采用HTTP1.0协议。</li>
+<li>服务器端接受到了这个请求，根据路径参数，经过后端的一些处理后，把处理后的一个结果数据返回给浏览器，如一个完整的HTML页面代码。</li>
+<li>浏览器拿到了HTML页面代码，在解析和渲染这个页面时，里面的JS、CSS、图片等静态文件也是发送一个个HTTP请求，经过上面7个步骤。</li>
+<li>浏览器完整渲染页面呈现给用户。</li>
+</ol>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/07/09/Node.js-HTTP模块（1）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/09/Node.js-querystring模块/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1515,141 +1674,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/20/JavaScript数组与高阶函数/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="Suixin">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/head-image.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="suixin">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="suixin" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/01/20/JavaScript数组与高阶函数/" itemprop="url">
-                  JavaScript数组与高阶函数
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-20T10:51:36+08:00">
-                2017-01-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/01/20/JavaScript数组与高阶函数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/20/JavaScript数组与高阶函数/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="JavaScript数组与高阶函数"><a href="#JavaScript数组与高阶函数" class="headerlink" title="JavaScript数组与高阶函数"></a>JavaScript数组与高阶函数</h1><blockquote>
-<h2 id="JS中的数组方法"><a href="#JS中的数组方法" class="headerlink" title="JS中的数组方法"></a>JS中的数组方法</h2></blockquote>
-<p>&ensp;&ensp;数组，都不陌生，几乎所有语言都有。JS中的数组其实也算是一种特殊的对象，它有着一些自己的方法，这里简单介绍一下数组的常用方法。<br>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/01/20/JavaScript数组与高阶函数/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1697,7 +1721,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1819,7 +1843,7 @@
 </div>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">站点共12.9k字</span>
+  <span class="post-count">站点共14.0k字</span>
 </div>
 
 
